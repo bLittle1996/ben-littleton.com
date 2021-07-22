@@ -15,6 +15,12 @@ describe(Header, () => {
     expect(banner).toBeInTheDocument();
   });
 
+  it("contains the logo", () => {
+    render(<Header />);
+
+    expect(screen.getByTestId("<Logo />")).toBeInTheDocument();
+  });
+
   it("does not render a navigation landmark if no links are provided", () => {
     const { container, rerender } = render(<Header />);
 

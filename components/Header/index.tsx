@@ -1,4 +1,5 @@
 import Link, { LinkProps } from "next/link";
+import Logo from "./Logo";
 import { UrlObject } from "url";
 import { isString } from "../../utils/guards";
 
@@ -13,7 +14,7 @@ export interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
     <header>
-      <div>some logo</div>
+      <Logo />
       {links && links.length > 0 && (
         <nav>
           <ul>
