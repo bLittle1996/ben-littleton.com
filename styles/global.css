@@ -1,4 +1,5 @@
 html,
 body {
   background: theme("colors.off-white");
+  color: theme("colors.text");
 }
