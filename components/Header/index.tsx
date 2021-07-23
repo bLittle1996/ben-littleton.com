@@ -11,15 +11,15 @@ export interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
-    <header>
+    <header className="max-w-7xl mx-auto px-8 py-8 flex justify-between">
       <Logo />
       {links && links.length > 0 && (
-        <nav>
+        <nav className="flex items-center justify-center">
           <ul>
             {links.map((link) => {
               const { text, ...linkProps } = link;
               return (
-                <li key={text}>
+                <li key={text} className="inline mr-4 last:mr-0">
                   <Link {...linkProps}>{text}</Link>
                 </li>
               );

@@ -1,9 +1,9 @@
 .container {
   position: relative;
   display: inline-block;
-  width: 64px;
-  height: 64px;
-  border: solid 2px theme("colors.text");
+  width: theme("width.16");
+  height: theme("width.16");
+  border: solid theme("width[0.5]") theme("colors.text");
 
   &,
   .text {
@@ -29,7 +29,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: theme("fontSize.2xl");
   color: theme("colors.text");
   user-select: none;
 }
