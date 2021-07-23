@@ -5,7 +5,7 @@ const Link: React.FC<LinkProps> = (props) => {
 
   return (
     <NextLink {...linkProps}>
-      <a className="border-b-2 border-accent-500">{children}</a>
+      <a className="border-b-1 border-accent-500">{children}</a>
     </NextLink>
   );
 };

@@ -1,12 +1,13 @@
-import Link, { LinkProps } from "next/link";
+import { LinkProps } from "next/link";
+import Link from "../Link";
 import Logo from "./Logo";
 
-export type Link = LinkProps & {
+export type HeaderLink = LinkProps & {
   text: string;
 };
 
 export interface HeaderProps {
-  links?: Link[];
+  links?: HeaderLink[];
 }
 
 const Header: React.FC<HeaderProps> = ({ links }) => {

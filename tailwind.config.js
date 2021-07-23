@@ -22,7 +22,11 @@ module.exports = {
         900: "#07568A",
       },
     },
-    extend: {},
+    extend: {
+      borderWidth: {
+        1: "1px",
+      },
+    },
   },
   variants: {
     extend: {

@@ -1,4 +1,4 @@
-import Header, { Link } from "..";
+import Header, { HeaderLink } from "..";
 import {
   getAllByRole,
   getByRole,
@@ -46,7 +46,7 @@ describe(Header, () => {
   });
 
   it("renders a provided list of links in the navigation", () => {
-    const links: Link[] = [
+    const links: HeaderLink[] = [
       {
         href: "/#town",
         text: "OwO",
