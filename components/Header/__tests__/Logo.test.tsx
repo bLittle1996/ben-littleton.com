@@ -1,4 +1,9 @@
-import { getByLabelText, getByText, render } from "@testing-library/react";
+import {
+  getByLabelText,
+  getByText,
+  render,
+  screen,
+} from "@testing-library/react";
 import Logo from "../Logo";
 
 describe(Logo, () => {
@@ -14,5 +19,11 @@ describe(Logo, () => {
     expect(
       getByLabelText(container, "Ben Littleton", { exact: true })
     ).toBeInTheDocument();
+  });
+
+  it("should be a level 1 heading", () => {
+    render(<Logo />);
+
+    expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
   });
 });

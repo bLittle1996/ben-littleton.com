@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border: solid 2px theme("colors.text");
+
+  &,
+  .text {
+    transition-timing-function: cubic-bezier(0.21, 0.41, 0.52, 1.04);
+    transition-duration: 1.5s, 250ms, 250ms, 250ms;
+    transition-property: transform, color, background-color, border-color;
+  }
+
+  &:hover {
+    background: theme("colors.accent.500");
+    border-color: theme("colors.accent.500");
+    transform: rotate(405deg);
+
+    .text {
+      color: theme("colors.off-white");
+      transform: translate(-50%, -50%) rotate(-405deg);
+    }
+  }
+}
+
+.text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: theme("colors.text");
+  user-select: none;
+}

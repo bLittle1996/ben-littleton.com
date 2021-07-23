@@ -1,7 +1,5 @@
 import Link, { LinkProps } from "next/link";
 import Logo from "./Logo";
-import { UrlObject } from "url";
-import { isString } from "../../utils/guards";
 
 export type Link = LinkProps & {
   text: string;

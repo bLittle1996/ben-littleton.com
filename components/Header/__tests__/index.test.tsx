@@ -18,7 +18,7 @@ describe(Header, () => {
   it("contains the logo", () => {
     render(<Header />);
 
-    expect(screen.getByTestId("<Logo />")).toBeInTheDocument();
+    expect(screen.getByTestId("logo")).toBeInTheDocument();
   });
 
   it("does not render a navigation landmark if no links are provided", () => {
