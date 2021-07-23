@@ -12,7 +12,7 @@ export interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
-    <header className="max-w-7xl mx-auto px-8 py-8 flex justify-between">
+    <header className="max-w-3xl mx-auto my-8 px-8 flex justify-between">
       <Logo />
       {links && links.length > 0 && (
         <nav className="flex items-center justify-center">
