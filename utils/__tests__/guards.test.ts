@@ -23,6 +23,9 @@ describe("guards", () => {
   describe(isString, () => {
     it("returns correctly asserts string types", () => {
       expect(types.filter(isString)).toHaveLength(2);
+      expect(
+        types.filter(isString).every((thing) => typeof thing === "string")
+      ).toBe(true);
     });
   });
 });
