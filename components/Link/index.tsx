@@ -1,8 +1,8 @@
 import NextLink, { LinkProps } from "next/link";
 import { classNames } from "../../utils";
-import { MergableClassName } from "../../utils/types";
+import { WithClassName } from "../../utils/types";
 
-const Link: React.FC<MergableClassName & LinkProps> = (props) => {
+const Link: React.FC<WithClassName<true> & LinkProps> = (props) => {
   const { children, className, overrideClassName, ...linkProps } = props;
 
   return (
