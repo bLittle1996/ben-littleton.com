@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { NonEmptyArray, StaticImport } from "../../utils/types";
-import Heading from "../Heading";
 import Link from "../Link";
 
 export type Tech = {
