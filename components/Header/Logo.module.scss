@@ -25,6 +25,7 @@
 }
 
 .text {
+  @apply font-base;
   position: absolute;
   left: 50%;
   top: 50%;

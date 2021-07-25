@@ -32,7 +32,7 @@ const Experience: React.FC<ExperienceProps> = ({
         placeholder="blur"
       />
 
-      <h3 className="my-4">
+      <h3 className="my-4 font-base">
         <Link href={projectLink}>{title}</Link>
       </h3>
 
