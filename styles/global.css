@@ -2,6 +2,7 @@ html,
 body {
   background: theme("colors.off-white");
   color: theme("colors.text");
+  line-height: 2;
 }
 
 h1 {
