@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
+import Experience from "../components/Experience";
 import Header from "../components/Header";
 import Link from "../components/Link";
+import jalupNextImage from "../public/images/projects/jalup-next.jpg";
 
 const styles: any = {};
 
@@ -43,6 +45,29 @@ export default function Home() {
             technologies and frameworks I am comfortable with, take a look at my{" "}
             <Link href="/#skills">skills</Link>.
           </p>
+        </article>
+
+        <article id="projects">
+          <h2 className="text-xl mb-3 mt-2">Projects</h2>
+
+          <Experience
+            image={jalupNextImage}
+            title="Jalup NEXT"
+            projectLink="https://japaneselevelup.com/jalup-next-web-app-shutting-down-service/"
+            techUsed={[
+              { name: "Laravel", link: "https://laravel.com/" },
+              { name: "Vue", link: "https://vuejs.org/" },
+              { name: "D3.js", link: "https://d3js.org/" },
+              { name: "SASS", link: "https://sass-lang.com/" },
+            ]}
+          >
+            Jalup NEXT is a web app designed to teach Japanese from zero in a
+            very natural way. I created the schema used by the app{"'"}s
+            database and built the RESTful API to talk to that database. I coded
+            several quality of life features, such as card searching, and
+            designed and built the exploration feature using d3.js, Vue.js, and
+            Vuex.
+          </Experience>
         </article>
       </main>
     </div>

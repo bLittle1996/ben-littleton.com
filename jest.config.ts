@@ -14,8 +14,9 @@ const config = {
   },
   moduleNameMapper: {
     "\\.s?css$": "<rootDir>/__mocks__/styleMock.ts",
+    "\\.(png|jpe?g|gif|svg|webp)$": "<rootDir>/__mocks__/imageMock.ts",
   },
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.tsx"],
 };
 
 export default config;
