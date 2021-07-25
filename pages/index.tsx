@@ -32,7 +32,7 @@ export default function Home() {
       />
 
       <main className="max-w-3xl mx-auto px-8">
-        <article id="about">
+        <article id="about" className="mb-8">
           <h2 className="mb-3 mt-2">About Me</h2>
 
           <p>
@@ -47,7 +47,7 @@ export default function Home() {
           </p>
         </article>
 
-        <article id="projects">
+        <article id="projects" className="mb-8">
           <h2 className="mb-3 mt-2">Projects</h2>
 
           <Experience
@@ -70,7 +70,7 @@ export default function Home() {
           </Experience>
         </article>
 
-        <article id="skills">
+        <article id="skills" className="mb-8">
           <h2 className="mb-3 mt-2">Skills</h2>
 
           <p>
@@ -80,7 +80,7 @@ export default function Home() {
           </p>
         </article>
 
-        <article id="contact">
+        <article id="contact" className="mb-8">
           <h2 className="mb-3 mt-2">Contact Me</h2>
 
           <p>

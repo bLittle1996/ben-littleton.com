@@ -1,8 +1,18 @@
 html,
 body {
+  @apply font-base tracking-wide;
   background: theme("colors.off-white");
   color: theme("colors.text");
   line-height: 2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading tracking-wider;
 }
 
 h1 {

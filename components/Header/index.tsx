@@ -21,7 +21,9 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               const { text, ...linkProps } = link;
               return (
                 <li key={text} className="inline mr-4 last:mr-0">
-                  <Link {...linkProps}>{text}</Link>
+                  <Link className="font-heading text-lg" {...linkProps}>
+                    {text}
+                  </Link>
                 </li>
               );
             })}

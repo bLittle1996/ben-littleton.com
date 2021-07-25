@@ -2,6 +2,10 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      base: ["Montserrat", '"Slabo 27px"', "sans-serif"],
+      heading: ['"Slabo 27px"', "Montserrat", "sans-serif"],
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
