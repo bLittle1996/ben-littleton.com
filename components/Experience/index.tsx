@@ -33,9 +33,9 @@ const Experience: React.FC<ExperienceProps> = ({
         placeholder="blur"
       />
 
-      <Heading level={3} className="my-4">
+      <h3 className="my-4">
         <Link href={projectLink}>{title}</Link>
-      </Heading>
+      </h3>
 
       <div className="mb-1">{children}</div>
 
