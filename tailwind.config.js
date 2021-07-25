@@ -27,6 +27,11 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        "sm-phone": "320px",
+        phone: "360px",
+        "lg-phone": "400px",
+      },
       borderWidth: {
         1: "1px",
       },
