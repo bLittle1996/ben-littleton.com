@@ -2,6 +2,11 @@ import "../styles/tailwind.css";
 import "../styles/global.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const Analytics = dynamic(() => import("../components/Analytics"), {
+  ssr: false,
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -23,6 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
+      <Analytics />
       <Component {...pageProps} />
     </>
   );
