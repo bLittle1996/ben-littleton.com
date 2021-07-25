@@ -79,6 +79,29 @@ export default function Home() {
             Router, jQuery, PHP, Laravel, and SQL databases
           </p>
         </article>
+
+        <article id="contact">
+          <h2 className="mb-3 mt-2">Contact Me</h2>
+
+          <p>
+            If you{"'"}d like to reach out to work with me or get to know me
+            better, you can contact me through the following resources:
+          </p>
+          <ul>
+            <li>
+              <strong>Email:</strong>{" "}
+              <Link href="mailto:b.little1996@gmail.com">
+                b.little1996@gmail.com
+              </Link>
+            </li>
+            <li>
+              <strong>LinkedIn:</strong>{" "}
+              <Link href="https://linkedin.com/in/blittle1996">
+                in/blittle1996
+              </Link>
+            </li>
+          </ul>
+        </article>
       </main>
     </div>
   );
