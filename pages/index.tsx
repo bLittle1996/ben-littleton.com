@@ -33,7 +33,7 @@ export default function Home() {
 
       <main className="max-w-3xl mx-auto px-8">
         <article id="about">
-          <h2 className="text-xl mb-3 mt-2">About Me</h2>
+          <h2 className="mb-3 mt-2">About Me</h2>
 
           <p>
             Hi, I am a Canadian web developer based in Southern Ontario. I have
@@ -48,7 +48,7 @@ export default function Home() {
         </article>
 
         <article id="projects">
-          <h2 className="text-xl mb-3 mt-2">Projects</h2>
+          <h2 className="mb-3 mt-2">Projects</h2>
 
           <Experience
             image={jalupNextImage}
@@ -68,6 +68,39 @@ export default function Home() {
             designed and built the exploration feature using d3.js, Vue.js, and
             Vuex.
           </Experience>
+        </article>
+
+        <article id="skills">
+          <h2 className="mb-3 mt-2">Skills</h2>
+
+          <p>
+            I have experience working with the full web stack. I am proficient
+            with the following: HTML5, CSS3, DOM, JavaScript, Vue.js, Vuex, Vue
+            Router, jQuery, PHP, Laravel, and SQL databases
+          </p>
+        </article>
+
+        <article id="contact">
+          <h2 className="mb-3 mt-2">Contact Me</h2>
+
+          <p>
+            If you{"'"}d like to reach out to work with me or get to know me
+            better, you can contact me through the following resources:
+          </p>
+          <ul>
+            <li>
+              <strong>Email:</strong>{" "}
+              <Link href="mailto:b.little1996@gmail.com">
+                b.little1996@gmail.com
+              </Link>
+            </li>
+            <li>
+              <strong>LinkedIn:</strong>{" "}
+              <Link href="https://linkedin.com/in/blittle1996">
+                in/blittle1996
+              </Link>
+            </li>
+          </ul>
         </article>
       </main>
     </div>
