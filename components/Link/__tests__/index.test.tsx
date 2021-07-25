@@ -27,4 +27,11 @@ describe(Link, () => {
     rerender(<Link href="/">{moreText}</Link>);
     expect(screen.getByText(moreText, { exact: true })).toBeInTheDocument();
   });
+
+  it("can override the className", () => {
+    const classes = "mb-3 font-bold";
+    render(<Link href="/" className={classes} overrideClassName />);
+
+    expect(screen.getByRole("link").getAttribute("class")).toBe(classes);
+  });
 });
