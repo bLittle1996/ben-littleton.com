@@ -56,8 +56,6 @@ const ExperienceCarousel: React.FC<ExperienceCarouselProps> = ({
               </li>
             );
           }
-
-          return null;
         })}
       </ul>
 
