@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
-import Experience, { ExperienceProps } from ".";
+import { ExperienceProps } from ".";
 import { classNames } from "../../utils";
-import styles from "./ExperienceCarousel.module.scss";
 
 export type ExperienceCarouselProps = {
   children:
