@@ -2,6 +2,7 @@ import "../styles/tailwind.css";
 import "../styles/global.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Header from "../components/Header";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -23,7 +24,34 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
-      <Component {...pageProps} />
+      <Header
+        links={[
+          {
+            text: "About",
+            href: "/#about",
+          },
+          {
+            text: "Experience",
+            href: "/#projects",
+          },
+          {
+            text: "Skills",
+            href: "/#skills",
+          },
+          {
+            text: "Contact",
+            href: "/#contact",
+          },
+        ]}
+      />
+
+      <main className="max-w-3xl mx-auto px-8">
+        <Component {...pageProps} />
+      </main>
+
+      <footer className="flex items-center justify-center text-sm my-4">
+        Copyright &copy; {new Date().getFullYear()}
+      </footer>
     </>
   );
 }
