@@ -3,6 +3,7 @@ import postcss from "postcss";
 import twConfig from "./tailwind.config";
 import fs from "fs";
 import path from "path";
+import { render } from "@testing-library/react";
 // Inject tailwind CSS into document
 export const generateTailwindCSS = () => {
   const tailwindFile = fs.readFileSync(path.resolve("./styles/tailwind.css"));
@@ -19,7 +20,7 @@ export const injectCSSIntoContainer = (
   const style = document.createElement("style");
   style.innerHTML = cssString;
 
-  container.prepend(style);
+  container.appendChild(style);
 
   return style;
 };

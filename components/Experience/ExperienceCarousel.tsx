@@ -82,7 +82,6 @@ const ExperienceCarousel: React.FC<ExperienceCarouselProps> = ({
                     experienceListRef.current?.scrollIntoView();
                   }}
                   disabled={isActiveIndex}
-                  aria-label={`Learn about my experience at ${title}`}
                 >
                   View {title}
                 </button>
