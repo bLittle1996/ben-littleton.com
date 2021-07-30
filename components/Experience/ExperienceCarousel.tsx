@@ -77,7 +77,16 @@ const ExperienceCarousel: React.FC<ExperienceCarouselProps> = ({
                   className={"text-sm border-b-1 border-accent-500"}
                   onClick={() => {
                     setActiveIndex(correctedIndex);
-                    experienceListRef.current?.scrollIntoView();
+                    const element = experienceListRef.current as
+                      | (HTMLUListElement & {
+                          scrollIntoViewIfNeeded?: Function;
+                        })
+                      | null;
+                    if (element?.scrollIntoViewIfNeeded) {
+                      element.scrollIntoViewIfNeeded();
+                    } else {
+                      element?.scrollIntoView();
+                    }
                   }}
                   disabled={isActiveIndex}
                 >
