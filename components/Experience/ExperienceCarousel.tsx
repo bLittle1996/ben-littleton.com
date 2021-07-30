@@ -10,10 +10,12 @@ export type ExperienceCarouselProps = {
     React.HTMLAttributes<HTMLElement>,
     HTMLElement
   >;
+  scrollToSelector?: string;
 };
 
 const ExperienceCarousel: React.FC<ExperienceCarouselProps> = ({
   children,
+  scrollToSelector,
   wrapperProps = {},
 }) => {
   const numberOfChildren = React.Children.count(children);
@@ -77,13 +79,17 @@ const ExperienceCarousel: React.FC<ExperienceCarouselProps> = ({
                   className={"text-sm border-b-1 border-accent-500"}
                   onClick={() => {
                     setActiveIndex(correctedIndex);
-                    const element = experienceListRef.current as
+                    const element = (
+                      scrollToSelector
+                        ? document.querySelector(scrollToSelector)
+                        : experienceListRef.current
+                    ) as
                       | (HTMLUListElement & {
                           scrollIntoViewIfNeeded?: Function;
                         })
                       | null;
                     if (element?.scrollIntoViewIfNeeded) {
-                      element.scrollIntoViewIfNeeded();
+                      element?.scrollIntoViewIfNeeded(false);
                     } else {
                       element?.scrollIntoView();
                     }

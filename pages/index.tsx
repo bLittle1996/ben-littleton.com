@@ -4,6 +4,7 @@ import Link from "../components/Link";
 import jalupNextImage from "../images/projects/jalup-next.jpg";
 import tfhImage from "../images/projects/tagsforhope-landing.jpg";
 import nativsharkImage from "../images/projects/nativshark-landing.jpg";
+import { useCallback, useRef } from "react";
 
 const styles: any = {};
 
@@ -31,6 +32,7 @@ export default function Home() {
         </h2>
 
         <ExperienceCarousel
+          scrollToSelector="#projects-title"
           wrapperProps={{
             "aria-describedby": "projects-title",
           }}
