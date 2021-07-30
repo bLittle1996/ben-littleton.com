@@ -1,5 +1,16 @@
+const env = process.env.NODE_ENV;
+/**
+ * @type {import("tailwindcss/tailwind-config").TailwindConfig}
+ */
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  purge: {
+    enabled: env !== "development",
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx,css,scss}",
+      "./components/**/*.{js,ts,jsx,tsx,css,scss}",
+      "./styles/global.css",
+    ],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {

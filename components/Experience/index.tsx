@@ -33,7 +33,9 @@ const Experience: React.FC<ExperienceProps> = ({
       />
 
       <h3 className="my-4 font-base">
-        <Link href={projectLink}>{title}</Link>
+        <Link href={projectLink} target="_blank">
+          {title}
+        </Link>
       </h3>
 
       <div className="mb-1">{children}</div>
