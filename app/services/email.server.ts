@@ -1,10 +1,11 @@
 import nodemailer from "nodemailer";
 
-type MailData = {
+export type MailData = {
   from: string;
   subject: string;
   body: string;
 };
+
 export const sendEmail = (
   data: MailData
 ): Promise<nodemailer.SentMessageInfo> => {
@@ -19,10 +20,10 @@ export const sendEmail = (
   return new Promise((resolve, reject) => {
     transporter.sendMail(
       {
-        from: data.from,
+        from: data.from, // with gmail, this is always the SMTP_USER we logged in as.
         to: process.env.MAIL_TO,
         subject: data.subject,
-        text: data.body,
+        text: `${data.body}\n\nSent by: ${data.from}`,
       },
       (error, info) => {
         if (error) {
