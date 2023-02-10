@@ -1,33 +1,29 @@
-import type { ActionFunction } from "@remix-run/node";
-import { redirect, json } from "@remix-run/node";
+import type { ActionArgs } from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
 import { Form, useActionData } from "@remix-run/react";
-import { object, ValidationError, SchemaOf, string } from "yup";
-import { sendEmail, MailData } from "~/services/email.server";
+import { z, ZodError } from "zod";
+import { sendEmail } from "~/services/email.server";
 
-export const action: ActionFunction = async ({ request }) => {
+const FormSchema = z.object({
+  from: z.string().email("Please enter a valid email address!"),
+  subject: z.string().trim(),
+  body: z.string().trim(),
+});
+
+export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
-  const formSchema: SchemaOf<MailData> = object().shape({
-    from: string().email().required("Please enter a valid email address!"),
-    subject: string().trim().required("Don't forget to provide a subject!"),
-    body: string()
-      .trim()
-      .required("Sending me an actual message is strongly recommended!"),
-  });
+
   try {
-    const validatedFormData = await formSchema.validate(
-      Object.fromEntries(formData.entries()),
-      // abortEarly stops all validation errors from being returned at once!
-      { abortEarly: false }
+    const validatedFormData = FormSchema.parse(
+      Object.fromEntries(formData.entries())
     );
 
-    await sendEmail({
-      ...validatedFormData,
-    });
+    await sendEmail(validatedFormData);
 
     return redirect("/");
   } catch (error) {
-    if (ValidationError.isError(error)) {
-      return json(error, { status: 400 });
+    if (error instanceof ZodError) {
+      return json(error.flatten(), { status: 400 });
     }
 
     return json(
@@ -38,23 +34,12 @@ export const action: ActionFunction = async ({ request }) => {
       { status: 500 }
     );
   }
-};
-
-type ActionData = ValidationError | { message: string; error: Error };
+}
 
 export default function HomePage() {
-  const actionData = useActionData<ActionData>();
+  const actionData = useActionData<typeof action>();
 
-  const errors = ValidationError.isError(actionData)
-    ? actionData.inner.reduce((errorMap, error) => {
-        const field = error.path;
-        if (field) {
-          errorMap[field] = error.message;
-        }
-
-        return errorMap;
-      }, {} as Record<string, string>)
-    : {};
+  const errors: Record<string, any> = {};
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
