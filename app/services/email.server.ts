@@ -22,7 +22,7 @@ export const sendEmail = (
       {
         from: data.from, // with gmail, this is always the SMTP_USER we logged in as.
         to: process.env.MAIL_TO,
-        subject: data.subject,
+        subject: "From benlittleton.ca: " + data.subject,
         text: `${data.body}\n\nSent by: ${data.from}`,
       },
       (error, info) => {
